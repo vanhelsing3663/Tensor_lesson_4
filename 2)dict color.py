@@ -1,5 +1,5 @@
 from matplotlib import colors
-from pprint import pprint
+from pprint import pprint # модуль для читаемого вывода словаря
 '''
 Создать словарь цветов, в котором ключ - название или кодировка цвета;
 значение - кортеж из rgb этого цвета.
