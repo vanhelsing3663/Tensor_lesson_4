@@ -30,7 +30,7 @@ while True:
     if color_name == 'стоп':
         break
     if color_name.isdecimal() or color_name.isdigit():
-        raise ValueError('Введите данные на английском не используя числа')
+        raise ValueError('Введите цвета на английском не используя числа')
     color_name = input('Ввод : ')
 print(f'Созданный словарь из ключа (цвет) : значение (его RGB) - {dictionary}')
 
