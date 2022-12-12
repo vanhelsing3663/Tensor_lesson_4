@@ -3,7 +3,7 @@ from pprint import pprint  # модуль для читаемого вывода
 '''
 Игровой инвентарь
 Инструкции
-1)Инвентарь не должен привышать 20 кг
+1)Инвентарь не должен весить < 20 кг
 2)Из инвентаря можно выбрасывать предметы
 3)Так же в инвентарь можно брать предметы у Сидоровича
 '''
@@ -37,7 +37,7 @@ print(f'''Я тебя спас и в благородство играть не 
 Заполни свой инвентарь, чтобы не идти в зону пустым!
 Смотри , чтобы инвентарь не переполнило специально для тебя сколько весит подписал...''')
 print()
-inventory_weight = 0
+
 inventory_dictionary = dict()
 
 while True:
@@ -64,7 +64,7 @@ while True:
                 f'''Вот что набрал {inventory_dictionary} . Вес твоего инвентаря составляет : {sum(inventory_dictionary.values())} кг''')
         else:
             print(
-                f'Вот что набрал {inventory_dictionary} . Удали что-нибудь слишком много предметов: {sum(inventory_dictionary.values())} кг')
+                f'Вот что набрал {inventory_dictionary} . Выброси что-нибудь слишком много предметов: {sum(inventory_dictionary.values())} кг')
     if subject == '4':
         print('Спасибо, Сидорович, до встречи!')
         break
@@ -73,5 +73,7 @@ while True:
 if sum(inventory_dictionary.values()) > 20:
     print(f'Собери инвентарь заново ты не унесешь {sum(inventory_dictionary.values())}')
 else:
-    print(f'Уххх, в моем инвентаре теперь {inventory_dictionary}')
-    print(f'Спасибо Сидоровичу , что не дал взять больше всего лишь {sum(inventory_dictionary.values())} кг')
+    print(f'Уххх, в моем инвентаре теперь:')
+    pprint(inventory_dictionary)
+    print(f'Спасибо Сидоровичу , что не дал взять больше всего лишь {sum(inventory_dictionary.values())} кг'
+          f'Выдвигаюсь в зону')
