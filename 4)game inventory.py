@@ -22,6 +22,7 @@ inventory_gun = {'Пистолет Пмм': 0.7,
                  'Винтовка СВДм-2': 5,
                  'Гранатомет РПГ-7у': 11,
                  'Гранатомет Бульдог-6': 12}
+
 inventory_help = {'Бинт': 0.22,
                   'Антирад': 0.32,
                   'Аптечка малая': 0.9,
@@ -29,6 +30,7 @@ inventory_help = {'Бинт': 0.22,
                   'Броня (шлем)': 1,
                   'Бронежелет': 2.5,
                   'Бронежелет и шлем': 3.5}
+
 pprint(inventory_help)
 pprint(inventory_gun)
 print()
@@ -48,16 +50,25 @@ while True:
     4)Нажми 4 , чтобы поблагодарить Сидоровича и выйти
     Вводи:''')
     if subject == '1':
-        gun = input('Вводи какое оружие хочешь добавить: ')
-        inventory_dictionary[gun] = inventory_gun[gun]
-        print(f'Сейчас в твоем инвентаре {inventory_dictionary}')
+        try:
+            gun = input('Вводи какое оружие хочешь добавить: ')
+            inventory_dictionary[gun] = inventory_gun[gun]
+            print(f'Сейчас в твоем инвентаре {inventory_dictionary}')
+        except Exception as e:
+            print('Ну что ты там ввел давай по новой!')
     if subject == '1.1':
-        medecine = input('Введи чем будешь лечиться : ')
-        inventory_dictionary[medecine] = inventory_help[medecine]
+        try:
+            medecine = input('Введи чем будешь лечиться : ')
+            inventory_dictionary[medecine] = inventory_help[medecine]
+        except Exception as e:
+            print('Ну что ты там ввел давай по новой!')
     if subject == '2':
-        print(f'Предметы {inventory_dictionary}')
-        drop = input('Введи , что хочешь удалить : ')
-        del inventory_dictionary[drop]
+        try:
+            print(f'Предметы {inventory_dictionary}')
+            drop = input('Введи , что хочешь удалить : ')
+            del inventory_dictionary[drop]
+        except Exception as e:
+            print('Удаляй только то что есть в инвентаре')
     if subject == '3':
         if sum(inventory_dictionary.values()) < 20:
             print(
@@ -74,6 +85,9 @@ if sum(inventory_dictionary.values()) > 20:
     print(f'Собери инвентарь заново ты не унесешь {sum(inventory_dictionary.values())}')
 else:
     print(f'Уххх, в моем инвентаре теперь:')
-    pprint(inventory_dictionary)
-    print(f'Спасибо Сидоровичу , что не дал взять больше всего лишь {sum(inventory_dictionary.values())} кг'
+    s = ''
+    for item, kg in inventory_dictionary.items():
+        s += f'{item}-{kg}кг,'
+    print(s[:-1])
+    print(f'Спасибо Сидоровичу , что не дал взять больше всего лишь {sum(inventory_dictionary.values())} кг\n'
           f'Выдвигаюсь в зону')
