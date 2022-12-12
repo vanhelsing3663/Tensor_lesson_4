@@ -54,8 +54,6 @@ while True:
     if subject == '1.1':
         medecine = input('Введи чем будешь лечиться : ')
         inventory_dictionary[medecine] = inventory_help[medecine]
-        if sum(inventory_dictionary.values()) > 20:
-            print('Собери инвентарь заново ты не унесешь')
     if subject == '2':
         print(f'Предметы {inventory_dictionary}')
         drop = input('Введи , что хочешь удалить : ')
