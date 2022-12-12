@@ -66,7 +66,7 @@ while True:
                 f'''Вот что набрал {inventory_dictionary} . Вес твоего инвентаря составляет : {sum(inventory_dictionary.values())} кг''')
         else:
             print(
-                f'Вот что набрал {inventory_dictionary} . Удали что-нибудь слишком много набрал: {sum(inventory_dictionary.values())} кг')
+                f'Вот что набрал {inventory_dictionary} . Удали что-нибудь слишком много предметов: {sum(inventory_dictionary.values())} кг')
     if subject == '4':
         print('Спасибо, Сидорович, до встречи!')
         break
