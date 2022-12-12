@@ -1,6 +1,6 @@
 from random import randint
 
-'''Сортировка методом пузырька'''
+''' Сортировка методом пузырька '''
 
 length = randint(5, 20)  # длина массива
 arr = [randint(1, 1000) for num in range(length)]  # генератор рандомных чисел
