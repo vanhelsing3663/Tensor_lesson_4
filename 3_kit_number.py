@@ -9,7 +9,7 @@ D) входят в первое или во второе, но не в оба и
 lenght_1 = randint(1, 20)
 lenght_2 = randint(1, 20)
 multiplicity_1 = {randint(1, 20) for i in range(lenght_1)}
-multiplicity_2 = {randint(1, 20) for i in range(lenght_1)}
+multiplicity_2 = {randint(1, 20) for i in range(lenght_2)}
 print(f'Два случайных набора различной длины :\n1) {multiplicity_1}\n2) {multiplicity_2}')
 
 print(f'''A) Элементы которые входят в оба набора {multiplicity_1 & multiplicity_2}
