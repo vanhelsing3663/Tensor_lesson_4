@@ -12,7 +12,6 @@ for i in range(length - 1):
     for j in range(length - i - 1):
         if arr[j] > arr[j + 1]:
             arr[j], arr[j + 1] = arr[j + 1], arr[j]
-            # print(arr) - вывод сортировки по шагам
 
 print(f'2) Отсортированный массив : {arr}')
 
